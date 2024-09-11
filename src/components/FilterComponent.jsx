@@ -1,6 +1,11 @@
-const FilterComponent = ({ setFilter }) => {
+import React from 'react';
+import { useTodos } from '../context/TodoContext';
+
+const FilterComponent = () => {
+  const { dispatch } = useTodos();
+
   const setFilterInView = filter => {
-    setFilter(filter);
+    dispatch({ type: 'SET_FILTER', payload: filter });
   };
 
   return (
